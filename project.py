@@ -1,9 +1,16 @@
+import os
 import telebot
 from telebot import types
 from vagalume import lyrics
+from dotenv import load_dotenv, find_dotenv
 
-bot = telebot.TeleBot("<TOKEN-BOT>")
-token_vagalume = ("<TOKEN-API-VAGALUME>")
+load_dotenv(find_dotenv())
+
+TELEGRAMAPI = os.environ.get("TELEGRAM_API")
+VAGALUMEAPI = os.environ.get("VAGALUME_API")
+
+bot = telebot.TeleBot(TELEGRAMAPI)
+token_vagalume = (VAGALUMEAPI)
 
 class Object(object):
   pass
